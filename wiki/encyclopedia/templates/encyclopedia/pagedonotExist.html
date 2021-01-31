@@ -1,0 +1,11 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<div class="alert alert-dark" role="alert">
+    <h1>This page doesn't exist. Go to the <a href="{% url 'wiki:index' %}" class="alert-link">Home Page</a></h1>
+  </div>
+{% endblock %}
