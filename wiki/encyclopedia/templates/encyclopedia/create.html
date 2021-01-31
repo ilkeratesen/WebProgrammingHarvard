@@ -1,0 +1,30 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia - Create an entry
+{% endblock %}
+
+{% block body %}
+    
+
+    {% if edit %}
+    <div class="alert col-lg-11" role="alert" style="background-color:darkgrey;">
+        <h1>Editing {{ entry_title }}</h1>
+    </div>
+       
+    {% else %}
+
+    <div class="alert col-lg-11" role="alert" style="padding: 0%;text-align: center;background-color: darkgray;">
+        <h1>Create Entry</h1>
+    </div>
+        
+    {% endif %}
+    <br>
+
+    <form action="{% url 'wiki:create' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="" class="btn btn-outline-primary">
+    </form>
+
+{% endblock %}
